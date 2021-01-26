@@ -44,10 +44,13 @@ export function displayPokeImg(pokeItem) {
             displayThreeRandomPokemon();
             const span = document.getElementById('caught');
             
+            
 
             span.textContent = '';
+            
     
-            span.append(turns);
+            span.append(pokeItem.pokemon);
+            
         }
 
         // if the player has already played 10 turns re-direct them to a results page //
