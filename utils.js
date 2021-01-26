@@ -55,7 +55,7 @@ export function displayPokeImg(pokeItem) {
 
         // if the player has already played 10 turns re-direct them to a results page //
         else {
-            window.location = '../results/results.html';
+            window.location = './results/results.html';
         }
     });
 
