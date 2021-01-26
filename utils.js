@@ -70,6 +70,8 @@ export function displayThreeRandomPokemon() {
     const thirdImage = displayPokeImg(thirdPoke);
 
     const div = document.getElementById('pokemon');
+
+    div.textContent = '';
     
     div.append(firstImage, secondImage, thirdImage);
 }
