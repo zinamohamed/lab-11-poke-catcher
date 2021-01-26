@@ -1,6 +1,6 @@
 const POKESTATS = 'POKESTATS';
 import pokeData from './pokeData.js';
-import identifyPokeById from './utils.js';
+import { identifyPokeById } from './utils.js';
 
 export function getPokeStats() {
     let stats = JSON.parse(localStorage.getItem(POKESTATS));

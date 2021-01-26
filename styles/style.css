@@ -25,6 +25,19 @@ p {
   font-size: 24px;
   line-height: 1;
 }
+
+span {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  line-height: 1;
+}
+
+span img {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+}
  
 
 #start-game-page{

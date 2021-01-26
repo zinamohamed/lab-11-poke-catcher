@@ -1,4 +1,5 @@
 import pokeData from './pokeData.js';
+import { incrementSeen, incrementCaught } from './localStorage.js';
 let turns = 0;
 
 export function getRandomPokemon() {
@@ -36,8 +37,17 @@ export function displayPokeImg(pokeItem) {
     // add event listener to image click so that every time a user clicks a pokeImage it renders a new set of pokemon using the displayThreeRandomPokemon function //
     
     pokeImage.addEventListener('click', () => {
+        turns++;
+        incrementCaught(pokeItem._id);
+  
         if (turns < 10) {
             displayThreeRandomPokemon();
+            const span = document.getElementById('caught');
+            
+
+            span.textContent = '';
+    
+            span.append(turns);
         }
 
         // if the player has already played 10 turns re-direct them to a results page //
@@ -51,7 +61,6 @@ export function displayPokeImg(pokeItem) {
 
 export function displayThreeRandomPokemon() {
   // increment ammount of turns player has gone //
-    turns++;
    // utlize getRandomPokemon function and render three unique random pokemon //
     let firstPoke = getRandomPokemon();
     let secondPoke = getRandomPokemon();
@@ -69,9 +78,14 @@ export function displayThreeRandomPokemon() {
     const secondImage = displayPokeImg(secondPoke);
     const thirdImage = displayPokeImg(thirdPoke);
 
+    incrementSeen(firstPoke._id);
+    incrementSeen(secondPoke._id);
+    incrementSeen(thirdPoke._id);
+
     const div = document.getElementById('pokemon');
 
     div.textContent = '';
     
     div.append(firstImage, secondImage, thirdImage);
+
 }
