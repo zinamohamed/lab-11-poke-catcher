@@ -1,4 +1,4 @@
-
+import { clearPokeStats } from '../localStorage.js';
 
 export function renderResults(pokeData, pokemon) {
     const tr = document.createElement('tr');
@@ -23,4 +23,10 @@ export function renderResults(pokeData, pokemon) {
 
     return tr;
 }
+
+const playAgainButton = document.getElementById('play-again');
+
+playAgainButton.addEventListener('click', () => {
+    clearPokeStats();
+});
 

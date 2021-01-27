@@ -49,3 +49,7 @@ export function incrementCaught(_id) {
 
     setPokeStats(stats);
 }
+
+export function clearPokeStats() {
+    localStorage.setItem(POKESTATS, '[]');
+}

@@ -5,15 +5,12 @@
 
 
 body, html {
-  width: 100%;
-  height: 100%;
+  
+  
   padding: 0;
   margin: 0;
   font-family: 'VT323', monospace;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  
   background-image: url('https://media.tenor.com/images/f047df15315c12e886d55b68a468e511/tenor.gif');
   background-size: auto;
   background-position: bottom right;
@@ -23,111 +20,7 @@ body, html {
 }
 
 
-p {
-margin: 20px;
-font-family: 'VT323', monospace;
-font-size: 24px;
-line-height: 1;
-}
 
-
-#start-game-page{
-display:flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-height: 100%;
-width: 100%;
-background: #f2cc8f;
-
-}
-
-#start-game-img {
-width: 400px;
-height: 400px;
-}
-
-#instructions-game-page{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-background-color: lightblue;
-height: 100%;
-width: 100%;
-padding: 10px;
-
-}
-
-#instructions-game-page img {
-margin: 10px;
-}
-
-#go-game {
-background-color: transparent;
-border: none;
-color: #1d3557;
-outline:none;
-width: 150px;
-height: 70px;
-border: 3px solid #003A70;
-font-family: 'VT323', monospace;
-border-radius: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-margin: 20px;
-
-}
-
-.main-section {
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-text-align: center;
-background-color: #FFCB05;;
-padding: 50px;
-}
-
-
-
-
-#pokemon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
-  padding: 100px;
-
-}
-
-#pokemon img {
-  width: 300px;
-  height: 300px;
-  transition: all .2s ease-in-out;
-}
-
-#pokemon img:hover {
-transform: scale(1.3);
-box-shadow: 10px 10px 2px 1px rgba(0, 58, 112, .2);
-
-
-}
-
-
-
-
-h1 {
-  font-size: 2em;
-  padding: 20px;
-}
 
 button {
   background-color: transparent;
@@ -154,3 +47,21 @@ button:hover {
   
     
 }
+
+#table {
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-bottom: 1px solid #003A70;
+ 
+  
+}
+
+tr img {
+  width: 50px;
+  height: 50px;
+}
+
