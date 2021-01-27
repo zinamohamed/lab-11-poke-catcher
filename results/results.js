@@ -1,4 +1,6 @@
-import { clearPokeStats } from '../localStorage.js';
+import { clearPokeStats, getPokeStats } from '../localStorage.js';
+import { renderSeenArray, renderCaughtArray, renderLabelsArray } from './utils.js';
+
 
 export function renderResults(pokeData, pokemon) {
     const tr = document.createElement('tr');
@@ -30,3 +32,46 @@ playAgainButton.addEventListener('click', () => {
     clearPokeStats();
 });
 
+const pokeStats = getPokeStats();
+
+var ctx = document.getElementById('pokeChart').getContext('2d');
+
+var pokeChart = new Chart(ctx, { // eslint-disable-line
+    type: 'bar',
+    data: {
+        labels: renderLabelsArray(pokeStats), 
+        datasets: [
+            {
+                label: 'Times Seen',
+                data: renderSeenArray(pokeStats), 
+                backgroundColor: 'rgba(199, 160, 8, 0.2)',
+                borderColor: 'rgba(255, 203, 5, 1)',
+                borderWidth: 2
+            },
+            {
+                label: 'Times Caught',
+                data: renderCaughtArray(pokeStats), 
+                backgroundColor: 'rgba(60, 90, 166, 0.2)',
+                borderColor: 'rgba(42, 117, 187, 1)',
+                borderWidth: 2
+            },
+        ]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 1
+                }
+            }],
+            
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 1
+                }
+            }]
+        }
+    }
+});
